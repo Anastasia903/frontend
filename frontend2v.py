@@ -33,7 +33,9 @@ def send():
         return redirect(url_for('no_data'))
 
     # Отправляем данные на второй сервер
-    response = requests.post('http://127.0.0.1:5001/save', json={'data': user_input})
+    response = requests.post('http://backend:5001/save', json={'data': user_input})
+    #response = requests.post('http://127.0.0.1:5001/save', json={'data': user_input})
+
 
     return render_template_string(f'''
     <html>
